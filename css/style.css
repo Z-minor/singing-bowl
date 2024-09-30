@@ -1,0 +1,150 @@
+@charset "UTF-8";
+:root {
+  --www: 20vw;
+  text-align: center;
+  font-size: 5vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #22231d;
+}
+
+#字 {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5vh;
+  position: fixed;
+}
+
+#滾動監測器 {
+  background-color: #20321c;
+  width: 80vw;
+  height: 1000vh;
+  position: absolute;
+  left: calc(var(--www) / 2);
+}
+
+.位 {
+  background-color: #ffa600;
+  width: 5vw;
+  height: 10vh;
+  position: fixed;
+  top: 0vh;
+  left: 45vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#位子1 {
+  width: 50vw;
+  height: 50vh;
+  left: 25vw;
+}
+
+#位子2 {
+  width: 50vw;
+  height: 20vh;
+  background-color: #413f00;
+}
+
+#位子3 {
+  width: 30vw;
+  height: 40vh;
+  background-color: #9b9725;
+}
+
+#位子4 {
+  width: 20vw;
+  height: 20vh;
+  left: 0vw;
+  background-color: #e3c058;
+}
+
+#位子5 {
+  left: 10vw;
+  background-color: #c8d393;
+}
+
+#位子6 {
+  left: 20vw;
+  background-color: #aeb780;
+}
+
+#位子7 {
+  left: 30vw;
+  background-color: #899066;
+}
+
+#位子8 {
+  left: 40vw;
+  background-color: #707554;
+}
+
+#位子9 {
+  left: 50vw;
+  background-color: #585c42;
+}
+
+#位子10 {
+  left: 60vw;
+  background-color: #3f432f;
+}
+
+#位子11 {
+  left: 70vw;
+  background-color: #1a1b13;
+}
+
+#位子12 {
+  left: 80vw;
+  background-color: black;
+}
+
+#位子13 {
+  left: 15vw;
+  background-color: #332800;
+}
+
+#位子14 {
+  left: 25vw;
+  background-color: #665000;
+}
+
+#位子15 {
+  left: 35vw;
+  background-color: #997800;
+}
+
+#位子16 {
+  left: 45vw;
+  background-color: #cca000;
+}
+
+#位子17 {
+  left: 55vw;
+  background-color: #ffc800;
+}
+
+#位子18 {
+  left: 65vw;
+  background-color: #ffd333;
+}
+
+#位子19 {
+  left: 75vw;
+  background-color: #ffde66;
+}
+/*# sourceMappingURL=style.css.map */
