@@ -1,0 +1,64 @@
+//* {
+  //margin: 0;
+  //padding: 0;
+  //box-sizing: border-box;
+  //font-family:"le jour", serif;
+//}
+
+:root {
+  --www: 20vw;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(34, 35, 29);
+}
+
+
+#字{
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vh;
+  position:fixed;
+  //z-index: 2;
+}
+
+#滾動監測器{
+  background-color: rgb(32, 50, 28);
+  width: 80vw;
+  height: 500vh;
+  position: absolute;
+  left: calc(var(--www) / 2);
+  //z-index: 1;
+}
+
+.位{
+  background-color: rgb(255, 166, 0);
+  width: 10vw;
+  height: 10vh;
+  position: fixed;
+  top: 0vh;
+  left: 45vw;
+  //z-index: 1;
+}
+
+#位子2{
+  width: 50vw;
+  height: 20vh;
+  background-color: rgb(65, 63, 0);
+}
+
+#位子3{
+  width: 30vw;
+  height: 40vh;
+  background-color: rgb(155, 151, 37);
+}
+#位子4{
+  width: 10vw;
+  height: 10vh;
+  left:30vw;
+  background-color: rgb(199, 211, 147);
+}

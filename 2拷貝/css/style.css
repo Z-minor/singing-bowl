@@ -1,0 +1,58 @@
+@charset "UTF-8";
+:root {
+  --www: 20vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #22231d;
+}
+
+#字 {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5vh;
+  position: fixed;
+}
+
+#滾動監測器 {
+  background-color: #20321c;
+  width: 80vw;
+  height: 500vh;
+  position: absolute;
+  left: calc(var(--www) / 2);
+}
+
+.位 {
+  background-color: #ffa600;
+  width: 10vw;
+  height: 10vh;
+  position: fixed;
+  top: 0vh;
+  left: 45vw;
+}
+
+#位子2 {
+  width: 50vw;
+  height: 20vh;
+  background-color: #413f00;
+}
+
+#位子3 {
+  width: 30vw;
+  height: 40vh;
+  background-color: #9b9725;
+}
+
+#位子4 {
+  width: 10vw;
+  height: 10vh;
+  left: 30vw;
+  background-color: #c7d393;
+}
+/*# sourceMappingURL=style.css.map */
