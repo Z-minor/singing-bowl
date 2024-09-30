@@ -1,0 +1,152 @@
+//* {
+  //margin: 0;
+  //padding: 0;
+  //box-sizing: border-box;
+  //font-family:"le jour", serif;
+//}
+
+:root {
+  --www: 20vw;
+  text-align: center;
+  font-size: 5vh;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(34, 35, 29);
+}
+
+
+#字{
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vh;
+  position:fixed;
+  //z-index: 2;
+}
+
+#滾動監測器{
+  background-color: rgb(32, 50, 28);
+  width: 80vw;
+  height: 1000vh;
+  //height: 5000px;
+  position: absolute;
+  left: calc(var(--www) / 2);
+  //z-index: 1;
+}
+
+.位{
+  background-color: rgb(255, 166, 0);
+  width: 5vw;
+  height: 10vh;
+  position: fixed;
+  top: 0vh;
+  left: 45vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  //z-index: 1;
+}
+
+#位子1{
+  width: 50vw;
+  height: 50vh;
+  left: 25vw;
+}
+
+#位子2{
+  width: 50vw;
+  height: 20vh;
+  background-color: rgb(65, 63, 0);
+}
+
+#位子3{
+  width: 30vw;
+  height: 40vh;
+  background-color: rgb(155, 151, 37);
+}
+#位子4{
+  width: 20vw;
+  height: 20vh;
+  left:0vw;
+  background-color: rgb(227, 192, 88);
+}
+
+
+#位子5{
+  left:10vw;
+  background-color: rgb(200, 211, 147);
+}
+
+#位子6{
+  left:20vw;
+  background-color: rgb(174, 183, 128);
+}
+
+#位子7{
+  left:30vw;
+  background-color: rgb(137, 144, 102);
+}
+
+#位子8{
+  left:40vw;
+  background-color: rgb(112, 117, 84);
+}
+
+#位子9{
+  left:50vw;
+  background-color: rgb(88, 92, 66);
+}
+
+#位子10{
+  left:60vw;
+  background-color: rgb(63, 67, 47)
+}
+
+#位子11{
+  left:70vw;
+  background-color: rgb(26, 27, 19)
+}
+
+#位子12{
+  left:80vw;
+  background-color: rgb(0, 0, 0)
+}
+
+#位子13{
+  left:15vw;
+  background-color: hsl(47, 100%, 10%);
+}
+
+#位子14{
+  left:25vw;
+  background-color: hsl(47, 100%, 20%);
+}
+
+#位子15{
+  left:35vw;
+  background-color: hsl(47, 100%, 30%);
+}
+
+#位子16{
+  left:45vw;
+  background-color: hsl(47, 100%, 40%);
+}
+
+#位子17{
+  left:55vw;
+  background-color: hsl(47, 100%, 50%);
+}
+
+#位子18{
+  left:65vw;
+  background-color: hsl(47, 100%, 60%);
+}
+
+#位子19{
+  left:75vw;
+  background-color: hsl(47, 100%, 70%);
+}
