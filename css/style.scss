@@ -48,14 +48,32 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  //z-index: 1;
+  //z-index: 1
 }
+
+
 
 #位子1{
   width: 50vw;
   height: 50vh;
   left: 25vw;
+  transition:  background-color ease-out 3s;
+  //background-color: rgb(255, 166, 0);
+
+  //&:hover {
+    //background-color: rgb(0, 0, 0);
+  //}
 }
+
+.變色{
+  //background-color: rgb(0, 0, 0) !important;
+  background-color: rgb(178, 255, 55) !important;
+}
+
+//.b{
+ // background-color: rgb(255, 255, 255) !important;
+//}
+
 
 #位子2{
   width: 50vw;
@@ -113,7 +131,8 @@ body{
 
 #位子12{
   left:80vw;
-  background-color: rgb(0, 0, 0)
+  background-color: rgb(0, 0, 0);
+  transition:  background-color ease-out 3s;
 }
 
 #位子13{

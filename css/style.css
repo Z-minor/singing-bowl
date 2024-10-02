@@ -52,6 +52,12 @@ body {
   width: 50vw;
   height: 50vh;
   left: 25vw;
+  -webkit-transition: background-color ease-out 3s;
+  transition: background-color ease-out 3s;
+}
+
+.變色 {
+  background-color: #b2ff37 !important;
 }
 
 #位子2 {
@@ -111,6 +117,8 @@ body {
 #位子12 {
   left: 80vw;
   background-color: black;
+  -webkit-transition: background-color ease-out 3s;
+  transition: background-color ease-out 3s;
 }
 
 #位子13 {

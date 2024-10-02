@@ -103,12 +103,22 @@ function 個體變速(主體){
 
     if(理想速度 < Math.abs(主體.現在速度)){
         //主體.現在速度*=主體.減速因子;
-        主體.現在速度-=(主體.現在速度-理想速度)/10;
+        //主體.現在速度-=(主體.現在速度-理想速度)/主體.減速因子;
+
+        if(主體.現在速度>0){
+            主體.現在速度=理想速度;
+        }
+        else{
+            主體.現在速度=-理想速度;
+        }
+
     }
 
     主體.現在位置+=主體.現在速度;
-
-
+  
+    /*if(主體.物件id=="位子1"){
+        console.log(主體.現在速度);
+    }*/
 }
 
 
@@ -225,3 +235,56 @@ setInterval(個體更新,15);
 
 
 //在真實滾輪位子 跟物件位子之間 多墊一層"轉譯函數曲線" 用來實現特定對話方塊在特定位子停下來
+
+
+
+const observer = new IntersectionObserver((主體,r) => {
+
+    
+        /*if (主體[0].isIntersecting) {
+            主體[0].target.classList.toggle('red');
+        } 
+        else {
+            主體[0].target.classList.remove('red')
+        }*/
+
+        if (主體[0].isIntersecting) {
+            主體[0].target.classList.toggle('變色');
+        } 
+        else {
+            主體[0].target.classList.remove('變色')
+        }
+
+        console.table(主體);
+
+    },
+  
+  
+  {
+    rootMargin: "-10%",
+    threshold: 1.0,
+  }
+  );
+  
+  const div = document.getElementById("位子1");
+  const div12 = document.getElementById("位子12");
+  observer.observe(div);
+  observer.observe(div12);
+
+
+
+  /*const observer2 = new IntersectionObserver((主體) => {
+
+
+    if (主體[0].isIntersecting) {
+        主體[0].target.classList.toggle('b');
+    } else { 主體[0].target.classList.remove('b')
+    
+
+  }},{
+    root: document.getElementById('位子2'),
+    threshold: 0,
+  }
+  );*/
+
+  //observer2.observe(div12);
