@@ -219,6 +219,7 @@ function 個體更新(){
         個體重繪(主體);
         }
     )
+    requestAnimationFrame(個體更新, 1000 / 60);
 }
 
 
@@ -226,7 +227,8 @@ function 個體更新(){
 
 //setInterval(變速,20);
 
-setInterval(個體更新,15);
+//setInterval(個體更新,10);
+個體更新();
 
 
 /* 顯示高度= (y軸高度(定值)-現在位置)*係數(決定方向速度 如果為1則與背景同步)
