@@ -25,9 +25,17 @@ body {
 #滾動監測器 {
   background-color: #20321c;
   width: 80vw;
-  height: 1000vh;
+  height: 10000px;
   position: absolute;
   left: calc(var(--www) / 2);
+}
+
+#補足滾輪誤差用 {
+  position: absolute;
+  top: 10000px;
+  background-color: #8dbd83;
+  height: 10000px;
+  width: 80vw;
 }
 
 .位 {
@@ -70,6 +78,7 @@ body {
   width: 30vw;
   height: 40vh;
   background-color: #9b9725;
+  z-index: 10;
 }
 
 #位子4 {
@@ -77,6 +86,7 @@ body {
   height: 20vh;
   left: 0vw;
   background-color: #e3c058;
+  z-index: 15;
 }
 
 #位子5 {
