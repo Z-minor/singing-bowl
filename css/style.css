@@ -23,11 +23,12 @@ body {
 }
 
 #滾動監測器 {
-  background-color: #20321c;
-  width: 80vw;
+  background-color: rgba(32, 50, 28, 0.7);
+  width: 100vw;
   height: 10000px;
   position: absolute;
-  left: calc(var(--www) / 2);
+  left: 0;
+  visibility: hidden;
 }
 
 #補足滾輪誤差用 {
