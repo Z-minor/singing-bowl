@@ -21,15 +21,20 @@ body{
 }
 
 img {
-  position: fixed;
+  background-color: rgba(255, 255, 255, 0);
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #圖片背景{
+  position: fixed;
   object-fit: cover;
   top: 0%;
   left: 0%;
   width: 100vw;
   height: 200vh;
+  filter: opacity(0.85),
+          //brightness(0.4);
 }
 
 
@@ -74,7 +79,7 @@ width: 80vw;
 }
 
 .位{
-  background-color: rgb(255, 166, 0);
+  background-color: rgba(255, 166, 0, 0);
   width: 5vw;
   height: 10vh;
   position: fixed;
@@ -83,7 +88,9 @@ width: 80vw;
   display:flex;
   align-items:center;
   justify-content:center;
+  
   //z-index: 1
+  filter: opacity(0%);
 }
 
 
@@ -92,8 +99,7 @@ width: 80vw;
   width: 50vw;
   height: 50vh;
   left: 25vw;
-  transition: filter  ease-out 5s,
-              background-color  ease-out 2s;
+  transition: filter  ease-out 1s;
   opacity: 1;
   
   //background-color: rgb(255, 166, 0);
@@ -103,10 +109,10 @@ width: 80vw;
   //}
 }
 
-.變色{
+.顯現{
   //background-color: rgb(0, 0, 0) !important;
-  background-color: rgb(255, 255, 255) !important;
-  filter: blur(3px) opacity(30%);;
+  background-color: rgba(255, 255, 255, 0) !important;
+  filter: opacity(100%);
   //opacity: 1 !important;
 }
 

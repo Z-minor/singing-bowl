@@ -324,7 +324,7 @@ let 個體參數= [[true,"位子1","y","3000px","25vh",0.3,0,0,10,100,0.9,true,[
 
 //物件化的寫法 讓順序變自由 讓修改變更容易
 
-let 個體參數新=[{慣性:true,物件id:"位子1",定位方向:"y",y軸錨點:"3000px",y軸偏移:"25vh",移動範圍倍率:0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:100,減速因子:0.9,三段式動態:true,第一拐點:[1000,2950],第二拐點:[5000,3050],轉譯後目標點:0,拐點單位:"絕對"},
+let 個體參數新=[{慣性:true,物件id:"位子1",定位方向:"y",y軸錨點:"0px",y軸偏移:"26vh",移動範圍倍率:0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:100,減速因子:0.9,三段式動態:true,第一拐點:[0,0],第二拐點:[1000,200],轉譯後目標點:0,拐點單位:"絕對"},
 {慣性:true,物件id:"位子2",定位方向:"y",y軸錨點:"0px",y軸偏移:"50vh",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.6},
 {慣性:true,物件id:"位子3",定位方向:"x",y軸錨點:"0px",y軸偏移:"0px",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:2,減速因子:0.9},{慣性:false,物件id:"位子4",定位方向:"y",y軸錨點:"0px",y軸偏移:"0vh",移動範圍倍率:"整個視窗"},
 {慣性:true,物件id:"位子5",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},{慣性:true,物件id:"位子6",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.35,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},
@@ -379,10 +379,10 @@ const observer = new IntersectionObserver((主體) => {
     
 
         if (主體[0].isIntersecting) {
-            主體[0].target.classList.toggle('變色');
+            主體[0].target.classList.toggle('顯現');
         } 
         else {
-            主體[0].target.classList.remove('變色')
+            主體[0].target.classList.remove('顯現')
         }
 
         //console.table(主體);
@@ -391,13 +391,13 @@ const observer = new IntersectionObserver((主體) => {
   
   
   {
-    rootMargin: "-10%",
+    rootMargin: "-20%",
     threshold: 1.0,
   }
   );
   
   const div = document.getElementById("位子1");
-  const div12 = document.getElementById("位子12");
+  //const div12 = document.getElementById("位子12");
   observer.observe(div);
-  observer.observe(div12);
+  //observer.observe(div12);
 
