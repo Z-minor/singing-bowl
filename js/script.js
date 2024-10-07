@@ -42,6 +42,7 @@ class 慣性移動實體{
 
         Object.assign(this, data);
         this.計算斜率();
+        this.錨點套用();
 
         
 
@@ -71,6 +72,10 @@ class 慣性移動實體{
             this.斜率2 = 計算單段斜率(第一拐點[0], 第一拐點[1], 第二拐點[0], 第二拐點[1]);
             this.斜率3 = 計算單段斜率(第二拐點[0], 第二拐點[1], 滾輪總深度, 滾輪總深度);
         }
+    }
+
+    錨點套用(){
+        this.現在位置 -= parseInt(this.y軸錨點);
     }
 }
 
@@ -164,9 +169,40 @@ function 新個體變速(主體){
 
 
 
+        
+
+
 
 
     }
+
+
+
+    //錨點與比例調整的東西都改成寫在這裡，也就是提早到真實位子反應之前。
+
+    目標點 -= parseInt(主體.y軸錨點);
+
+    let 係數 = (主體.移動範圍倍率 == "整個視窗") ? 移動範圍為整個視窗大小的係數 : 主體.移動範圍倍率;
+    if(主體.定位方向=="x"){
+        係數 = 移動範圍為整個視窗大小的係數x;
+    }
+
+
+    目標點 *= 係數;
+
+
+    if(主體.移動範圍倍率 == "整個視窗"){
+
+        if(主體.定位方向=="y"){
+            目標點+= document.getElementById(`${主體.物件id}`).offsetHeight * window.scrollY / 滾輪總深度;
+        }else{
+            目標點+= document.getElementById(`${主體.物件id}`).offsetWidth * window.scrollY / 滾輪總深度;
+        }
+
+
+    }
+
+
 
 
 
@@ -195,8 +231,11 @@ function 新個體變速(主體){
     主體.現在速度+=理想每幀速度變化幅度;
     主體.現在位置+=主體.現在速度;
 
+    
+
 
 }
+
 
 
 
@@ -212,19 +251,19 @@ function 個體重繪(主體){
         if(主體.慣性==true){
        
             if(主體.定位方向=="y"){
-                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${主體.現在位置}px ) * ${移動範圍為整個視窗大小的係數} + ${主體.y軸偏移} - (${document.getElementById(`${主體.物件id}`).offsetHeight}px * ${window.scrollY/滾輪總深度}))`;
+                document.getElementById(`${主體.物件id}`).style.top=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;
             }
             else{
-                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${主體.現在位置}px ) * ${移動範圍為整個視窗大小的係數x} + ${主體.y軸偏移} - (${document.getElementById(`${主體.物件id}`).offsetWidth}px * ${window.scrollY/滾輪總深度}))`;
-                console.log(window.scrollY/滾輪總深度);
+                document.getElementById(`${主體.物件id}`).style.left=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;
+                //console.log(document.getElementById("圖片背景").offsetHeight}px * ${window.scrollY/滾輪總深度);
             }
         }
         else{
             if(主體.定位方向=="y"){
-                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${window.scrollY}px ) * ${移動範圍為整個視窗大小的係數} + ${主體.y軸偏移} - (${document.getElementById(`${主體.物件id}`).offsetHeight}px * ${window.scrollY/滾輪總深度}))`;
+                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${window.scrollY}px ) + ${主體.y軸偏移})`;
             }
             else{
-                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${window.scrollY}px ) * ${移動範圍為整個視窗大小的係數x} + ${主體.y軸偏移} - (${document.getElementById(`${主體.物件id}`).offsetWidth}px * ${window.scrollY/滾輪總深度}))`;
+                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${window.scrollY}px ) + ${主體.y軸偏移} )`;
             }
         }
 
@@ -233,18 +272,18 @@ function 個體重繪(主體){
         if(主體.慣性==true){
        
             if(主體.定位方向=="y"){
-                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${主體.現在位置}px ) * ${主體.移動範圍倍率} + ${主體.y軸偏移})`;
+                document.getElementById(`${主體.物件id}`).style.top=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移})`;
             }
             else{
-                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${主體.現在位置}px ) * ${主體.移動範圍倍率} + ${主體.y軸偏移})`;
+                document.getElementById(`${主體.物件id}`).style.left=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移})`;
             }
         }
         else{
             if(主體.定位方向=="y"){
-                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${window.scrollY}px ) * ${主體.移動範圍倍率} + ${主體.y軸偏移})`;
+                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${window.scrollY}px ) + ${主體.y軸偏移})`;
             }
             else{
-                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${window.scrollY}px ) * ${主體.移動範圍倍率} + ${主體.y軸偏移})`;
+                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${window.scrollY}px ) + ${主體.y軸偏移})`;
             }
         }
     
@@ -287,7 +326,7 @@ let 個體參數= [[true,"位子1","y","3000px","25vh",0.3,0,0,10,100,0.9,true,[
 
 let 個體參數新=[{慣性:true,物件id:"位子1",定位方向:"y",y軸錨點:"3000px",y軸偏移:"25vh",移動範圍倍率:0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:100,減速因子:0.9,三段式動態:true,第一拐點:[1000,2950],第二拐點:[5000,3050],轉譯後目標點:0,拐點單位:"絕對"},
 {慣性:true,物件id:"位子2",定位方向:"y",y軸錨點:"0px",y軸偏移:"50vh",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.6},
-{慣性:true,物件id:"位子3",定位方向:"x",y軸錨點:"0px",y軸偏移:"0px",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:2,減速因子:0.9},{慣性:false,物件id:"位子4",定位方向:"y",y軸錨點:"1000px",y軸偏移:"10vh",移動範圍倍率:"整個視窗"},
+{慣性:true,物件id:"位子3",定位方向:"x",y軸錨點:"0px",y軸偏移:"0px",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:2,減速因子:0.9},{慣性:false,物件id:"位子4",定位方向:"y",y軸錨點:"0px",y軸偏移:"0vh",移動範圍倍率:"整個視窗"},
 {慣性:true,物件id:"位子5",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},{慣性:true,物件id:"位子6",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.35,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},
 {慣性:true,物件id:"位子7",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.4,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},{慣性:true,物件id:"位子8",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.45,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},
 {慣性:true,物件id:"位子9",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.5,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},{慣性:true,物件id:"位子10",定位方向:"y",y軸錨點:"2000px",y軸偏移:"50vh",移動範圍倍率:-0.55,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:10,減速因子:0.9},
@@ -321,6 +360,7 @@ function 個體更新(){
         個體重繪(主體);
         }
     )
+    console.log(document.getElementById("圖片背景").offsetHeight * window.scrollY/滾輪總深度);
     requestAnimationFrame(個體更新, 1000 / 60);
 }
 
@@ -345,7 +385,7 @@ const observer = new IntersectionObserver((主體) => {
             主體[0].target.classList.remove('變色')
         }
 
-        console.table(主體);
+        //console.table(主體);
 
     },
   
