@@ -3,6 +3,7 @@
   --www: 20vw;
   text-align: center;
   font-size: 5vh;
+  border: 0px;
 }
 
 body {
@@ -11,6 +12,29 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #22231d;
+}
+
+img {
+  position: fixed;
+}
+
+#圖片背景 {
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 200vh;
+}
+
+#背景 {
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2b3b27;
+  z-index: -2;
 }
 
 #字 {
@@ -61,12 +85,17 @@ body {
   width: 50vw;
   height: 50vh;
   left: 25vw;
-  -webkit-transition: background-color ease-out 3s;
-  transition: background-color ease-out 3s;
+  -webkit-transition: background-color  ease-out 2s, -webkit-filter  ease-out 5s;
+  transition: background-color  ease-out 2s, -webkit-filter  ease-out 5s;
+  transition: filter  ease-out 5s, background-color  ease-out 2s;
+  transition: filter  ease-out 5s, background-color  ease-out 2s, -webkit-filter  ease-out 5s;
+  opacity: 1;
 }
 
 .變色 {
-  background-color: #b2ff37 !important;
+  background-color: white !important;
+  -webkit-filter: blur(3px) opacity(30%);
+          filter: blur(3px) opacity(30%);
 }
 
 #位子2 {
