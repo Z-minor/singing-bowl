@@ -118,7 +118,12 @@ class 慣性移動實體{
 
 function 新個體變速(主體){
 
-    let 目標點 = window.scrollY;
+    let 當前滾輪深度 = window.scrollY;
+        if(當前滾輪深度<0){
+            當前滾輪深度=0;
+        }
+
+    let 目標點 = 當前滾輪深度;
 
 
 
@@ -133,7 +138,7 @@ function 新個體變速(主體){
 
         if(主體.拐點單位=="相對"){
 
-            const 百分化滾輪位子 = window.scrollY/滾輪總深度;
+            const 百分化滾輪位子 = 當前滾輪深度/滾輪總深度;
 
             if(百分化滾輪位子<主體.第一拐點[0]){
                 主體.轉譯後目標點=百分化滾輪位子*主體.斜率1;
@@ -160,21 +165,21 @@ function 新個體變速(主體){
         }
         else{
 
-            if(window.scrollY<主體.第一拐點[0]){
-                主體.轉譯後目標點=window.scrollY*主體.斜率1;
+            if(當前滾輪深度<主體.第一拐點[0]){
+                主體.轉譯後目標點=當前滾輪深度*主體.斜率1;
             }
     
 
     
-            else if(window.scrollY>主體.第二拐點[0]){
-                主體.轉譯後目標點=滾輪總深度-((滾輪總深度-window.scrollY)*主體.斜率3);
+            else if(當前滾輪深度>主體.第二拐點[0]){
+                主體.轉譯後目標點=滾輪總深度-((滾輪總深度-當前滾輪深度)*主體.斜率3);
             }
     
 
     
             else{
     
-                主體.轉譯後目標點=(window.scrollY-主體.第一拐點[0])*主體.斜率2+主體.第一拐點[1];
+                主體.轉譯後目標點=(當前滾輪深度-主體.第一拐點[0])*主體.斜率2+主體.第一拐點[1];
     
             }
         }
@@ -221,11 +226,11 @@ function 新個體變速(主體){
         if(主體.定位方向=="y"){
 
             
-            目標點 += document.getElementById(`${主體.物件id}`).offsetHeight * window.scrollY / 滾輪總深度;
+            目標點 += document.getElementById(`${主體.物件id}`).offsetHeight * 當前滾輪深度 / 滾輪總深度;
 
             
         }else{
-            目標點 += document.getElementById(`${主體.物件id}`).offsetWidth * window.scrollY / 滾輪總深度;
+            目標點 += document.getElementById(`${主體.物件id}`).offsetWidth * 當前滾輪深度 / 滾輪總深度;
         }
 
 
@@ -274,7 +279,10 @@ function 新個體變速(主體){
 function 個體重繪(主體){
 
 
-    
+    let 當前滾輪深度 = window.scrollY;
+        if(當前滾輪深度<0){
+            當前滾輪深度=0; 
+        }
 
         
         if(主體.慣性==true){
@@ -284,15 +292,15 @@ function 個體重繪(主體){
             }
             else{
                 document.getElementById(`${主體.物件id}`).style.left=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;
-                //console.log(document.getElementById("圖片背景").offsetHeight}px * ${window.scrollY/滾輪總深度);
+                //console.log(document.getElementById("圖片背景").offsetHeight}px * ${當前滾輪深度/滾輪總深度);
             }
         }
         else{
             if(主體.定位方向=="y"){
-                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${window.scrollY}px ) + ${主體.y軸偏移})`;
+                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${當前滾輪深度}px ) + ${主體.y軸偏移})`;
             }
             else{
-                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${window.scrollY}px ) + ${主體.y軸偏移} )`;
+                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${當前滾輪深度}px ) + ${主體.y軸偏移} )`;
             }
         }
 
