@@ -28,13 +28,7 @@ img {
   width: 100vw;
   height: 200vh;
   z-index: -1;
-  -webkit-filter: opacity(0.85);
-          filter: opacity(0.85);
-}
-
-#圖片 {
-  -webkit-filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
-          filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
+  opacity: 0.85;
 }
 
 #背景 {
@@ -89,8 +83,7 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-filter: opacity(0%);
-          filter: opacity(0%);
+  opacity: 0;
 }
 
 .本 {
@@ -101,14 +94,11 @@ img {
   transition: -webkit-filter  ease-out 1s;
   transition: filter  ease-out 1s;
   transition: filter  ease-out 1s, -webkit-filter  ease-out 1s;
-  opacity: 1;
-  -webkit-filter: opacity(0%);
-          filter: opacity(0%);
+  opacity: 0;
 }
 
 .顯現 {
-  -webkit-filter: opacity(100%) !important;
-          filter: opacity(100%) !important;
+  opacity: 1 !important;
   -webkit-transition-delay: 0s !important;
           transition-delay: 0s !important;
 }
