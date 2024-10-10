@@ -173,6 +173,8 @@ width: 80vw;
   transform: scale(0%) ;
   height: 100vw;
   width: 100vw;
+  min-width: 80vh;
+  min-height: 80vh;
   border-radius: 50%;
   filter: blur(50px);
   animation: 波 8s infinite cubic-bezier(.38,-0.31,.15,1);

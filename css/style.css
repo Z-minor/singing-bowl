@@ -140,6 +140,8 @@ img {
           transform: scale(0%);
   height: 100vw;
   width: 100vw;
+  min-width: 80vh;
+  min-height: 80vh;
   border-radius: 50%;
   -webkit-filter: blur(50px);
           filter: blur(50px);
