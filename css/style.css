@@ -234,9 +234,9 @@ img {
   transition: opacity  ease-out 1s;
   z-index: 0;
   top: 0%;
-  left: 25vw;
-  height: 50vh;
-  width: 50vw;
+  left: 0vw;
+  height: 100vh;
+  width: 100vw;
   opacity: 0;
 }
 
