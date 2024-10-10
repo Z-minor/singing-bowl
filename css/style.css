@@ -90,10 +90,8 @@ img {
   width: 50vw;
   height: 50vh;
   left: 25vw;
-  -webkit-transition: -webkit-filter  ease-out 1s;
-  transition: -webkit-filter  ease-out 1s;
-  transition: filter  ease-out 1s;
-  transition: filter  ease-out 1s, -webkit-filter  ease-out 1s;
+  -webkit-transition: opacity  ease-out 1s;
+  transition: opacity  ease-out 1s;
   opacity: 0;
 }
 
