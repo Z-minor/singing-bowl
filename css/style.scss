@@ -119,6 +119,13 @@ width: 80vw;
   
 }
 
+.嚴格定位{
+  position:fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 
 
 .陰影{
@@ -167,7 +174,7 @@ width: 80vw;
 .波紋{
   background-color: rgba(0, 255, 251, 0.023);
   border: 5px;
-  border-color: rgb(255, 255, 255);
+  border-color: rgb(255, 253, 225);
   position: absolute;
   border-style:solid;
   transform: scale(0%) ;
@@ -204,7 +211,37 @@ width: 80vw;
   transform: scale(100%);
   opacity: 0;
   filter: blur(10px);
-  background-color: rgba(0, 255, 251, 0.023);
+  background-color: rgba(255, 238, 0, 0.023);
 }
 
+}
+
+
+#黑背景{
+  height: 1vw;
+  width: 1vw;
+  left: 50vw;
+  
+  //transition-delay: 0.5s !important;
+
+}
+
+.內層滑輪{
+  position:fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: opacity  ease-out 1s;
+  z-index: 0;
+  top:0%;
+  left: 25vw;
+  height: 50vh;
+  width: 50vw;
+  opacity: 0;
+}
+
+
+.背景改色{
+  opacity:1 !important;
+  transition-delay: 0s !important;
 }

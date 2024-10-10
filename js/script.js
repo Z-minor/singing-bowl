@@ -213,9 +213,9 @@ function 新個體變速(主體){
 
     目標點 *= 係數;
 
-    if(主體.物件id=="圖片背景"){
+    /*if(主體.物件id=="圖片背景"){
         console.log(document.getElementById(`${主體.物件id}`).offsetHeight);
-    }
+    }*/
 
     
 
@@ -295,12 +295,16 @@ function 個體重繪(主體){
                 //console.log(document.getElementById("圖片背景").offsetHeight}px * ${當前滾輪深度/滾輪總深度);
             }
         }
+
         else{
+            if(!主體.移動範圍倍率){
+                主體.移動範圍倍率 = 1;
+            }
             if(主體.定位方向=="y"){
-                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${當前滾輪深度}px ) + ${主體.y軸偏移})`;
+                document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移})`;
             }
             else{
-                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${當前滾輪深度}px ) + ${主體.y軸偏移} )`;
+                document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移} )`;
             }
         }
 
@@ -347,7 +351,9 @@ let 個體參數新=[{慣性:true,物件id:"位子1",定位方向:"y",y軸錨點
 {慣性:true,物件id:"位子14",定位方向:"y",y軸錨點:"0px",y軸偏移:"26vh",移動範圍倍率:0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:80,減速因子:0.99,三段式動態:true,第一拐點:[0,0],第二拐點:[950,200],轉譯後目標點:0,拐點單位:"絕對"},
 
 {慣性:true,物件id:"圖片背景",定位方向:"y",y軸錨點:"0px",y軸偏移:"0vh",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:5,鬆弛度:2,減速因子:0.3},
-{慣性:true,物件id:"波1",定位方向:"y",y軸錨點:"200px",y軸偏移:"50vh",移動範圍倍率:0.05,現在位置:0,現在速度:0,每一影格前進等分:20,鬆弛度:100,減速因子:0.999}];
+{慣性:true,物件id:"波1",定位方向:"y",y軸錨點:"200px",y軸偏移:"50vh",移動範圍倍率:0.05,現在位置:0,現在速度:0,每一影格前進等分:20,鬆弛度:100,減速因子:0.999},
+{慣性:true,物件id:"黑背景",定位方向:"y",y軸錨點:"3000px",y軸偏移:"50vh",移動範圍倍率:1,現在位置:0,現在速度:0,每一影格前進等分:5,鬆弛度:2,減速因子:0.5,三段式動態:true,第一拐點:[2000,3000],第二拐點:[5000,3200],轉譯後目標點:0,拐點單位:"絕對"},
+{慣性:true,物件id:"黑背景內",定位方向:"y",y軸錨點:"3000px",y軸偏移:"50vh",移動範圍倍率:0.1,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:100,減速因子:0.9}];
 
 
 
@@ -428,14 +434,49 @@ function 創造監視實體(){
 
 
 }
-  const divlist = document.querySelectorAll(".位");
+  const divlist = document.querySelectorAll(".logo");
 
 
  divlist.forEach((主體)=>{observer.observe(主體)});
 
+
+
+
+
  
+ const 嚴格檢測 = new IntersectionObserver((主體) => {
+
+    
+    主體.forEach((主體)=>{
+
+        if (主體.isIntersecting) {
+            主體.target.children[0].classList.add('背景改色');
+
+            
+        } 
+        else {
+            主體.target.children[0].classList.remove('背景改色')
+        }
+        //console.log(主體.target.children[0]);
+
+    })
+
+    
+    
+        //console.table(主體);
+    
+    },
+    
+    
+    {
+    rootMargin: "0%" ,
+    threshold: [0.8,0.9,1]
+    }
+    );
 
 
+    const 檢測清單 = document.querySelectorAll(".嚴格定位");
 
+    檢測清單.forEach((主體)=>{嚴格檢測.observe(主體)});
 
 
