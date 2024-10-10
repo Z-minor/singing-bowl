@@ -240,8 +240,16 @@ width: 80vw;
   opacity: 0;
 }
 
+#缽背景內{
+  transition: opacity  ease-out 5s;
+}
+
 
 .背景改色{
   opacity:1 !important;
   transition-delay: 0s !important;
+
+  div{
+    opacity: 1;
+  }
 }

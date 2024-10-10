@@ -5,6 +5,7 @@
   font-size: 5vh;
   border: 0px;
   border-width: 0px;
+  font-family: "Apple LiSung Light";
 }
 
 body {
@@ -240,9 +241,18 @@ img {
   opacity: 0;
 }
 
+#缽背景內 {
+  -webkit-transition: opacity  ease-out 5s;
+  transition: opacity  ease-out 5s;
+}
+
 .背景改色 {
   opacity: 1 !important;
   -webkit-transition-delay: 0s !important;
           transition-delay: 0s !important;
+}
+
+.背景改色 div {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
