@@ -102,14 +102,8 @@ img {
   transition: filter  ease-out 1s;
   transition: filter  ease-out 1s, -webkit-filter  ease-out 1s;
   opacity: 1;
-  -webkit-filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)), opacity(0%);
-          filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)), opacity(0%);
-}
-
-.陰影 {
-  -webkit-filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
-          filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
-  width: 70%;
+  -webkit-filter: opacity(0%);
+          filter: opacity(0%);
 }
 
 .顯現 {

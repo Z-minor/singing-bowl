@@ -113,16 +113,17 @@ width: 80vw;
   left: 25vw;
   transition: filter  ease-out 1s;
   opacity: 1;
-  filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)),
-   opacity(0%);
+  //filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)),
+  // opacity(0%);
+  filter: opacity(0%);
   
 }
 
 
 
 .陰影{
-  filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)) ;
-  width: 70%;
+  //filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)) ;
+  //width: 70%;
 
 }
 
