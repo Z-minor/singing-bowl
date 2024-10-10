@@ -12,12 +12,11 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #22231d;
+  width: 100vw;
 }
 
 img {
   background-color: rgba(255, 255, 255, 0);
-  max-width: 100%;
-  max-height: 100%;
 }
 
 #圖片背景 {
@@ -28,8 +27,14 @@ img {
   left: 0%;
   width: 100vw;
   height: 200vh;
+  z-index: -1;
   -webkit-filter: opacity(0.85);
           filter: opacity(0.85);
+}
+
+#圖片 {
+  -webkit-filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
+          filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
 }
 
 #背景 {
@@ -70,7 +75,7 @@ img {
 
 .位 {
   background-color: rgba(255, 166, 0, 0);
-  width: 5vw;
+  width: 50vw;
   height: 10vh;
   position: fixed;
   top: 0vh;
@@ -88,7 +93,7 @@ img {
           filter: opacity(0%);
 }
 
-#位子1 {
+.本 {
   width: 50vw;
   height: 50vh;
   left: 25vw;
@@ -97,109 +102,30 @@ img {
   transition: filter  ease-out 1s;
   transition: filter  ease-out 1s, -webkit-filter  ease-out 1s;
   opacity: 1;
+  -webkit-filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)), opacity(0%);
+          filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)), opacity(0%);
+}
+
+.陰影 {
+  -webkit-filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
+          filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429));
+  width: 70%;
 }
 
 .顯現 {
-  background-color: rgba(255, 255, 255, 0) !important;
-  -webkit-filter: opacity(100%);
-          filter: opacity(100%);
-}
-
-#位子2 {
-  width: 50vw;
-  height: 20vh;
-  background-color: #413f00;
-}
-
-#位子3 {
-  width: 30vw;
-  height: 40vh;
-  background-color: #9b9725;
-  z-index: 10;
-}
-
-#位子4 {
-  width: 20vw;
-  height: 20vh;
-  left: 0vw;
-  background-color: #e3c058;
-  z-index: 15;
-}
-
-#位子5 {
-  left: 10vw;
-  background-color: #c8d393;
-}
-
-#位子6 {
-  left: 20vw;
-  background-color: #aeb780;
-}
-
-#位子7 {
-  left: 30vw;
-  background-color: #899066;
-}
-
-#位子8 {
-  left: 40vw;
-  background-color: #707554;
-}
-
-#位子9 {
-  left: 50vw;
-  background-color: #585c42;
-}
-
-#位子10 {
-  left: 60vw;
-  background-color: #3f432f;
-}
-
-#位子11 {
-  left: 70vw;
-  background-color: #1a1b13;
-}
-
-#位子12 {
-  left: 80vw;
-  background-color: black;
-  -webkit-transition: background-color ease-out 3s;
-  transition: background-color ease-out 3s;
-}
-
-#位子13 {
-  left: 15vw;
-  background-color: #332800;
+  -webkit-filter: opacity(100%) !important;
+          filter: opacity(100%) !important;
+  -webkit-transition-delay: 0s !important;
+          transition-delay: 0s !important;
 }
 
 #位子14 {
-  left: 25vw;
-  background-color: #665000;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
-#位子15 {
-  left: 35vw;
-  background-color: #997800;
-}
-
-#位子16 {
-  left: 45vw;
-  background-color: #cca000;
-}
-
-#位子17 {
-  left: 55vw;
-  background-color: #ffc800;
-}
-
-#位子18 {
-  left: 65vw;
-  background-color: #ffd333;
-}
-
-#位子19 {
-  left: 75vw;
-  background-color: #ffde66;
+#位子13 {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 /*# sourceMappingURL=style.css.map */
