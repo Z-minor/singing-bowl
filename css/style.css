@@ -241,8 +241,8 @@ img {
 }
 
 #缽背景內 {
-  -webkit-transition: opacity  ease-out 5s;
-  transition: opacity  ease-out 5s;
+  -webkit-transition: opacity  ease-out 3s;
+  transition: opacity  ease-out 3s;
 }
 
 .背景改色 {
@@ -253,5 +253,47 @@ img {
 
 .背景改色 div {
   opacity: 1;
+}
+
+#bo {
+  -webkit-transition: -webkit-transform  ease-out 1s;
+  transition: -webkit-transform  ease-out 1s;
+  transition: transform  ease-out 1s;
+  transition: transform  ease-out 1s, -webkit-transform  ease-out 1s;
+}
+
+.震動 {
+  -webkit-animation: 缽震 0.05s 40 cubic-bezier(0.55, -0.01, 0.45, 1) both;
+          animation: 缽震 0.05s 40 cubic-bezier(0.55, -0.01, 0.45, 1) both;
+}
+
+@-webkit-keyframes 缽震 {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(0.1deg) scale(1.01);
+            transform: rotate(0.1deg) scale(1.01);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes 缽震 {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(0.1deg) scale(1.01);
+            transform: rotate(0.1deg) scale(1.01);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */

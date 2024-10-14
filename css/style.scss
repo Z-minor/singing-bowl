@@ -241,7 +241,7 @@ width: 80vw;
 }
 
 #缽背景內{
-  transition: opacity  ease-out 5s;
+  transition: opacity  ease-out 3s;
 }
 
 
@@ -252,4 +252,32 @@ width: 80vw;
   div{
     opacity: 1;
   }
+}
+
+
+#bo{
+  transition: transform  ease-out 1s;
+}
+
+.震動{
+  animation: 缽震 0.05s 40 cubic-bezier(.55,-0.01,.45,1) both;
+}
+
+@keyframes 缽震{
+  0%{
+
+  transform: rotate(0deg) scale(1);
+
+}
+
+50%{
+  transform: rotate(0.1deg) scale(1.01);
+}
+
+
+
+100%{
+  transform: rotate(0deg) scale(1);
+}
+
 }

@@ -482,3 +482,45 @@ function 創造監視實體(){
     檢測清單.forEach((主體)=>{嚴格檢測.observe(主體)});
 
 
+    const 敲缽 = document.getElementById("缽背景內");
+    const bo = document.getElementById("bo");
+   
+
+    敲缽.addEventListener("transitionstart", (e) => {
+
+        //console.log(`${e.propertyName}+${e.target.id}`);
+    
+
+
+        if(敲缽.classList.contains('背景改色')){
+            if(e.currentTarget==e.target){
+                敲缽.addEventListener("click",缽被點擊);
+            }
+        
+            
+
+        }
+    });
+
+
+
+    function 缽被點擊(e){
+        console.log("click event!");
+        缽搖();
+        window.scrollTo(0,8000);
+        敲缽.removeEventListener("click",缽被點擊);
+    }
+
+
+    function 缽搖(){
+        bo.classList.add('震動');
+
+        //bo.addEventListener("transitionend",()
+    }
+
+
+
+
+
+
+
