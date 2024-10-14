@@ -515,7 +515,21 @@ function 創造監視實體(){
     function 缽搖(){
         bo.classList.add('震動');
 
-        //bo.addEventListener("transitionend",()
+        敲缽.addEventListener("transitionend",(e) => {
+
+
+            if(e.currentTarget==e.target){
+                if(bo.classList.contains('震動')){
+                    bo.classList.remove('震動');
+                }
+            }
+
+
+        })
+
+
+
+
     }
 
 
