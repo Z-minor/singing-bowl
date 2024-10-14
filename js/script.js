@@ -507,7 +507,7 @@ function 創造監視實體(){
     function 缽被點擊(e){
         console.log("click event!");
         缽搖();
-        window.scrollTo(0,8000);
+        //window.scrollTo(0,8000);
         敲缽.removeEventListener("click",缽被點擊);
     }
 
