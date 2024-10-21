@@ -118,7 +118,7 @@ class 慣性移動實體{
 
 function 新個體變速(主體){
 
-    let 當前滾輪深度 = window.scrollY;
+    當前滾輪深度 = 當前滾輪Y;
         if(當前滾輪深度<0){
             當前滾輪深度=0;
         }
@@ -279,7 +279,15 @@ function 新個體變速(主體){
 function 個體重繪(主體){
 
 
-    let 當前滾輪深度 = window.scrollY;
+
+    if(document.getElementById(`${主體.物件id}`).classList.contains("在畫面外")){
+        
+        if(Math.random()>0.1){
+          return
+        }
+    }
+
+    當前滾輪深度 = 當前滾輪Y;
         if(當前滾輪深度<0){
             當前滾輪深度=0; 
         }
@@ -351,7 +359,7 @@ let 個體參數新=[{慣性:true,物件id:"位子1",定位方向:"y",y軸錨點
 {慣性:true,物件id:"位子14",定位方向:"y",y軸錨點:"0px",y軸偏移:"26vh",移動範圍倍率:0.3,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:80,減速因子:0.99,三段式動態:true,第一拐點:[0,0],第二拐點:[950,200],轉譯後目標點:0,拐點單位:"絕對"},
 
 {慣性:true,物件id:"圖片背景",定位方向:"y",y軸錨點:"0px",y軸偏移:"0vh",移動範圍倍率:"整個視窗",現在位置:0,現在速度:0,每一影格前進等分:5,鬆弛度:2,減速因子:0.3},
-{慣性:true,物件id:"波1",定位方向:"y",y軸錨點:"200px",y軸偏移:"50vh",移動範圍倍率:0.05,現在位置:0,現在速度:0,每一影格前進等分:20,鬆弛度:100,減速因子:0.999},
+//{慣性:true,物件id:"波1",定位方向:"y",y軸錨點:"200px",y軸偏移:"50vh",移動範圍倍率:0.05,現在位置:0,現在速度:0,每一影格前進等分:20,鬆弛度:100,減速因子:0.999},
 {慣性:true,物件id:"黑背景",定位方向:"y",y軸錨點:"4000px",y軸偏移:"50vh",移動範圍倍率:1,現在位置:0,現在速度:0,每一影格前進等分:5,鬆弛度:2,減速因子:0.5,三段式動態:true,第一拐點:[4000,4000],第二拐點:[7000,4200],轉譯後目標點:0,拐點單位:"絕對"},
 {慣性:true,物件id:"黑背景內",定位方向:"y",y軸錨點:"4000px",y軸偏移:"0vh",移動範圍倍率:0.1,現在位置:0,現在速度:0,每一影格前進等分:10,鬆弛度:100,減速因子:0.9},
 {慣性:true,物件id:"缽背景",定位方向:"y",y軸錨點:"4500px",y軸偏移:"50vh",移動範圍倍率:1,現在位置:0,現在速度:0,每一影格前進等分:5,鬆弛度:2,減速因子:0.5,三段式動態:true,第一拐點:[4500,4500],第二拐點:[7500,4700],轉譯後目標點:0,拐點單位:"絕對"},
@@ -400,10 +408,16 @@ function 初始化所有個體(){
     
 }
 
-
+let 當前滾輪Y;
 
 
 function 個體更新(){
+
+    當前滾輪Y = window.scrollY;
+        if(當前滾輪Y<0){
+            當前滾輪Y=0; 
+        }
+
     個體陣列.forEach(主體 => {
 
 
@@ -426,7 +440,7 @@ function 個體更新(){
     }
 
 
-    document.getElementById("t1").style.transform=`rotate(${window.scrollY/100}deg)`;
+    document.getElementById("t1").style.transform=`rotate(${當前滾輪Y/100}deg)`;
 
     //console.log(document.getElementById("圖片背景").offsetHeight * window.scrollY/滾輪總深度);
     requestAnimationFrame(個體更新, 1000 / 60);
@@ -582,14 +596,15 @@ function 創造監視實體(){
     }
 
 
-let arr = document.querySelector("body").querySelectorAll("*")
+//let arr = document.querySelector("body").querySelectorAll("*")
 
 
 
 
-/*  
 
-//這裡用來優化效能的方式太無腦 待修
+
+
+//讓logo出畫面後節能
 
 
 const 進出畫面 = new IntersectionObserver((主體) => {
@@ -598,12 +613,12 @@ const 進出畫面 = new IntersectionObserver((主體) => {
     主體.forEach((主體)=>{
 
         if (主體.isIntersecting) {
-            主體.target.style.opacity=1;
+            主體.target.classList.remove('在畫面外');
 
             
         } 
         else {
-            主體.target.style.opacity=0;
+            主體.target.classList.add('在畫面外');
         }
         //console.log(主體.target.children[0]);
 
@@ -618,12 +633,16 @@ const 進出畫面 = new IntersectionObserver((主體) => {
     
     {
     rootMargin: "0%" ,
-    threshold: [0]
+    threshold: [0,0.01]
     }
     );
 
 
+    const 節能 = document.querySelectorAll(".節能");
 
-    arr.forEach((主體)=>{進出畫面.observe(主體)}); 
+    節能.forEach((主體)=>{進出畫面.observe(主體)});
 
-    */
+    //arr.forEach((主體)=>{進出畫面.observe(主體)}); 
+
+
+    
