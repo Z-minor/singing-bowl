@@ -76,7 +76,7 @@ img {
   //width: 80vw;
   width: 100vw;
   //height: 1000vh;
-  height: 50000px;
+  height: 48300px;
   position: absolute;
   //left: calc(var(--www) / 2);
   left: 0;
@@ -86,9 +86,9 @@ img {
 
 #補足滾輪誤差用{
 position: absolute;
-top: 50000px;
+top: 48300px;
 background-color: rgb(141, 189, 131);
-height: 50000px;
+height: 48300px;
 width: 80vw;
 }
 
@@ -437,7 +437,7 @@ width: 80vw;
 }
 
 
-.滿版靠右{
+.滿版靠右, .滿版靠左{
   position: fixed;
   width: 100%;
   height: 100%;
@@ -449,10 +449,24 @@ width: 80vw;
   display: flex;
   align-items:center;
   justify-content:flex-start;
-  flex-direction: row-reverse
+  
 }
 
-#往左{
+
+.滿版靠右{
+
+  flex-direction: row-reverse;
+}
+
+.滿版靠左{
+  position: absolute;
+  flex-direction: row;
+  
+}
+
+
+
+#往左, #往右{
   //flex-shrink: 0;
   height: 120%;
   min-height: 88vw;
@@ -460,4 +474,43 @@ width: 80vw;
 
 }
 
+#用來讓手機版相片往左移{
+  position: absolute;
+  display: flex;
+  align-items:center;
+  justify-content:flex-start;
+  height: 100vh;
+  width: 100vw;
+  min-width: 70vh;
+}
+
+#全畫面{
+  position: fixed;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+  left: 0px;
+}
+
+
+#陰霾{
+  height: 1vw;
+  width: 1vw;
+  left: 50vw;
+}
+
+#e1 , #e3{
+  opacity: 1;
+  position: absolute;
+  width: 160%;
+  height: 250%;
+  object-fit: cover;
+}
+
+#陰霾圖{
+  position: fixed;
+}
 
