@@ -28,7 +28,7 @@ img {
   left: 0%;
   width: 100vw;
   height: 200vh;
-  z-index: -1;
+  z-index: -2;
   opacity: 1;
 }
 
@@ -94,6 +94,7 @@ img {
   -webkit-transition: opacity  ease-out 1s;
   transition: opacity  ease-out 1s;
   opacity: 0;
+  z-index: -1;
 }
 
 .嚴格定位 {

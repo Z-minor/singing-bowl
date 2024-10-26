@@ -5,6 +5,7 @@
   //font-family:"le jour", serif;
 //}
 
+
 :root {
   --www: 20vw;
   //text-align: center;
@@ -12,7 +13,10 @@
   border: 0px;
   border-width: 0px;
   //object-fit: cover;
+  
 }
+
+
 
 body{
   margin: 0;
@@ -41,14 +45,16 @@ img {
   left: 0%;
   width: 100vw;
   height: 200vh;
-  z-index: -1;
+  z-index: -2;
   opacity:1;
           //brightness(0.4);
           
 }
 
 
-
+div{
+  
+}
 
 
 
@@ -82,6 +88,7 @@ img {
   left: 0;
   //z-index: 1;
   visibility: hidden;
+
 }
 
 #補足滾輪誤差用{
@@ -90,6 +97,8 @@ top: 48300px;
 background-color: rgb(141, 189, 131);
 height: 48300px;
 width: 80vw;
+
+
 }
 
 .位{
@@ -116,6 +125,7 @@ width: 80vw;
   //filter: drop-shadow(-2mm 3mm 6mm rgba(255, 241, 172, 0.429)),
   // opacity(0%);
   opacity:0;
+  z-index: -1;
   
 }
 
@@ -124,7 +134,12 @@ width: 80vw;
   display:flex;
   align-items:center;
   justify-content:center;
+  //transform: translateY(1px);
 }
+
+//.嚴格定位 > div{
+//  position:static !important;
+//}
 
 
 
