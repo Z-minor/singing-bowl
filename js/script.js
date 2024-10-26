@@ -293,9 +293,9 @@ function 個體重繪(主體){
 
     }*/
 
+    let id = document.getElementById(`${主體.物件id}`);
 
-
-    if(document.getElementById(`${主體.物件id}`).classList.contains("在畫面外")){
+    if(id.classList.contains("在畫面外")){
         
         if(Math.random()>0.1){
           return
@@ -314,17 +314,17 @@ function 個體重繪(主體){
        
             if(主體.定位方向=="y"){
 
-                if(document.getElementById(`${主體.物件id}`).classList.contains("嚴格定位")||document.getElementById(`${主體.物件id}`).classList.contains("本")){
-                    document.getElementById(`${主體.物件id}`).style.top=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;  
+                if(id.classList.contains("嚴格定位")||id.classList.contains("本")||id.classList.contains("指示")){
+                    id.style.top=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;  
                 }
                 else{
-                    document.getElementById(`${主體.物件id}`).style.transform=`translateY(calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} ))`;
+                    id.style.transform=`translateY(calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} ))`;
                 }
             }
             else{
-                //document.getElementById(`${主體.物件id}`).style.left=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;
+                //id.style.left=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;
                 //console.log(document.getElementById("圖片背景").offsetHeight}px * ${當前滾輪深度/滾輪總深度);
-                document.getElementById(`${主體.物件id}`).style.transform=`translateX(calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} ))`;
+                id.style.transform=`translateX(calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} ))`;
             }
         }
 
@@ -333,12 +333,12 @@ function 個體重繪(主體){
                 主體.移動範圍倍率 = 1;
             }
             if(主體.定位方向=="y"){
-                //document.getElementById(`${主體.物件id}`).style.top=`calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移})`;
-                document.getElementById(`${主體.物件id}`).style.transform=`translateY(calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移}))`;
+                //id.style.top=`calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移})`;
+                id.style.transform=`translateY(calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移}))`;
             }
             else{
-                //document.getElementById(`${主體.物件id}`).style.left=`calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移} )`;
-                document.getElementById(`${主體.物件id}`).style.transform=`translateX(calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移}))`;
+                //id.style.left=`calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移} )`;
+                id.style.transform=`translateX(calc((${主體.y軸錨點} - ${當前滾輪深度}px )*${主體.移動範圍倍率} + ${主體.y軸偏移}))`;
             }
         }
 
