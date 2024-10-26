@@ -94,7 +94,6 @@ img {
   -webkit-transition: opacity  ease-out 1s;
   transition: opacity  ease-out 1s;
   opacity: 0;
-  z-index: -1;
 }
 
 .嚴格定位 {

@@ -314,7 +314,7 @@ function 個體重繪(主體){
        
             if(主體.定位方向=="y"){
 
-                if(document.getElementById(`${主體.物件id}`).classList.contains("嚴格定位")){
+                if(document.getElementById(`${主體.物件id}`).classList.contains("嚴格定位")||document.getElementById(`${主體.物件id}`).classList.contains("本")){
                     document.getElementById(`${主體.物件id}`).style.top=`calc(( 0px - ${主體.現在位置}px ) + ${主體.y軸偏移} )`;  
                 }
                 else{
